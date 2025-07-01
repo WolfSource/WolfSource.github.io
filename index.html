@@ -111,15 +111,14 @@
     </script>
 
     <script>
-      // Scale z based on size or aspect
+
       const minW = 344, maxW = 1728;
-      const minZ = 16, maxZ = 4;
-    
+      const minZ = 13.6, maxZ = 4;
+
       const w = Math.min(Math.max(window.innerWidth, minW), maxW);
       const t = (w - minW) / (maxW - minW); // Normalize to [0, 1]
       const z = minZ + (maxZ - minZ) * t;
-
-      const Z = Math.round(z * 10) / 10; // Round to 1 decimal for stability
+      const Z = Math.round(z * 10) / 10; // Round to 1 decimal
 
       var roomSize = new THREE.Vector3(3, 3, Z);
       var textScale = 0.3;
